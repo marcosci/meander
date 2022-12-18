@@ -1,6 +1,6 @@
 #' class for Channel objects
 #' @importFrom R6 R6Class
-Channel <- R6Class("Channel",
+Channel <- R6::R6Class("Channel",
                   public = list(
                     x = NULL, # x-coordinate of centerline
                     y = NULL, # y-coordinate of centerline
@@ -21,18 +21,16 @@ Channel <- R6Class("Channel",
                     },
                     report = function() {
                       cli_alert_info(c(
-                        "X coordinate(s) of centerline: ", blue$underline$bold(min(self$x)), " ... ", max(self$x)))
+                        bgX("X coordinate(s) of centerline: ", crayon::underline$bold(min(self$x)), " ... ", crayon::underline$bold(max(self$x)))))
                       cli_alert_info(c(
-                        "Y coordinate(s) of centerline: ", min(self$y), " ... ", max(self$y)))
+                        bgY("Y coordinate(s) of centerline: ", crayon::underline$bold(min(self$y)), " ... ", crayon::underline$bold(max(self$y)))))
                       cli_alert_info(c(
-                        "Z coordinate(s) of centerline: ", min(self$z), " ... ", max(self$z)))
+                        bgZ("Z coordinate(s) of centerline: ", crayon::underline$bold(min(self$z)), " ... ", crayon::underline$bold(max(self$z)))))
                       cli_alert_info(c(
-                        "Channel width: ", self$W))
+                        bgW("Channel width: ", crayon::underline$bold(self$W))))
                       cli_alert_info(c(
-                        "Channel depth: ", self$D))
+                        bgD("Channel depth: ", crayon::underline$bold(self$D))))
                     }
                   )
 )
 
-channel <- Channel$new(1,2,3,4,5)
-channel

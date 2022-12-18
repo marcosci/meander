@@ -15,7 +15,8 @@
 #' pad = 100                    # padding (number of nodepoints along centerline)
 #' deltas = 50.0                # sampling distance along centerline
 #' n_bends = 30                 # approximate number of bends you want to model
-#' test <- generate_initial_channel(W,D,Sl,deltas,pad,n_bends)
+#' Sl = 0                    # initial slope (setting this to non-zero results in instabilities in long runs)
+#' channel <- generate_initial_channel(W,D,Sl,deltas,pad,n_bends)
 
 generate_initial_channel <- function(W,
                                      D,
