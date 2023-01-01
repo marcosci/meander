@@ -13,4 +13,5 @@ Imports:
     cli,
     crayon,
     pracma,
-    R6
+    R6,
+    rdist
